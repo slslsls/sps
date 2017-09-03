@@ -1,0 +1,9 @@
+include cheerio
+
+IncomeStatement
+  sales
+  netIncome
+  getSales
+  getNetIncome
+
+  getSection(html)

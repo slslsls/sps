@@ -1,0 +1,5 @@
+
+
+PricingService
+  getSharePrice(symbol)
+  getMarketCap(symbol)

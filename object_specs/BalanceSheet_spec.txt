@@ -1,0 +1,19 @@
+include cheerio
+
+BalanceSheet
+  cash
+  shortTermInvestments
+  accountsReceivable
+  inventory
+  longTermInvestments
+  propertyPlantEquipment
+  intangibleAssets
+
+  accountsPayable
+  shortTermDebt
+  longTermDebt
+
+  equity
+
+  getSection(html)
+  get ...

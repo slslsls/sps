@@ -1,0 +1,17 @@
+include config
+include request-promise
+
+CompanyListService
+  private buildSymbolsRequest(market)
+    define domain;
+    define path;
+    define query params;
+    concatenate;
+    define other options;
+    build request object
+  public getMainstreamSymbols
+    buildSymbolsRequest(mainstream);
+    request-promise(...)
+  public getOtcSymbols
+    buildSymbolsRequest(otc)
+    request-promise(...)

@@ -1,0 +1,15 @@
+include config
+include request-promise
+
+StatementService
+  buildStatementRequest(form, period)
+    define domain;
+    define path;
+    define query params;
+    concatenate;
+    define other options;
+    build request object
+  getStatement(form, period)
+    buildStatementRequest(form, period)
+    request-promise(...)
+  

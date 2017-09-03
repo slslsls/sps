@@ -1,0 +1,6 @@
+CompanyAnalyzer
+  decide(Company)
+    if isCashFlowPositive
+    if freeCashFlowToNetTangibles > .2
+    ...
+    email >

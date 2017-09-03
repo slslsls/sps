@@ -1,0 +1,11 @@
+include CompanyListService
+
+CompanyListController
+  buildMainstreamList
+    CompanyListService.getMainstreamSymbols();
+    parse response
+    build list
+  buildOtcList
+    CompanyListService.getOtcSymbols()
+    parse response
+    build list

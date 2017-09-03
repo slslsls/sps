@@ -1,0 +1,24 @@
+call flow:
+
+company list service makes http call
+company list service pulls out (or generates) an array of ticker symbols
+company list service passes array to company list controller
+company list controller pops 'Z' (Zillow) from top of list
+company list controller passes 'Z' to statement service
+statement service makes http call to sec edgar site > 'Z'
+  parses http for link to desired statement
+  repeat...
+  downloads statement html
+statement service passes statement html to page parser
+page parser locates desired section (income stmt, etc)
+page parser passes section html to (for example) income statement controller
+income statement controller parses for the relevant financial metrics
+company controller interrogates is, bs, and cf, makes calculations, ratios, timelines
+company analyzer interrogates company controller
+company analyzer weighs all the relevant calculations
+if it's a yes, company analyzer passes info to email service
+  symbol
+  share price
+  market cap
+  reasons for being a yes
+email service sends email

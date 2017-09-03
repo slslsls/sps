@@ -1,0 +1,2 @@
+url for mainstream symbols
+url for otc symbols

@@ -1,0 +1,48 @@
+company list service
+  get list of publicly traded companies, symbols
+  pass list to company list controller
+
+company list controller
+  pop from top of list
+  pass to statement service
+
+statement service (crawler)
+  call edgar url for a company
+  get desired statement
+  download html
+  pass to page parser
+
+pricing service
+  get latest share price
+  get latest market cap
+
+page parser
+  find income statement section
+  find balance sheet section
+  find cash flow statement section
+  pass to the proper controller
+
+income statement
+  sales
+  net income
+  ...
+  get sales
+  get net income
+  ...
+
+balance sheet
+  ...
+
+cash flow statement
+  ...
+
+company
+  get ratios
+  get timelines
+
+company analyzer
+  weigh all the financial calculations
+  make decision
+
+email service
+  send notification of companies that meet criteria

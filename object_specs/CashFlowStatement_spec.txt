@@ -1,0 +1,11 @@
+include cheerio
+
+CashFlowStatement
+  netIncome
+  depreciationAmortization
+  capitalExpenditures
+  cashFromIssuingStock
+  cashToPurchaseStock
+
+  getSection(html)
+  get ...

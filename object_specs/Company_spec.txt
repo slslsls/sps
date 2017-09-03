@@ -1,0 +1,15 @@
+Company
+  sharePrice
+  marketCap
+  incomeStatement
+  balanceSheet
+  cashFlowStatement
+
+  totalDebtToAssets
+  netTangibles
+  cashAndEquivalents
+  netTangiblesToMarketCap
+  cashAndEquivalentsToNetTangibles
+  freeCashFlowToMarketCap
+  freeCashFlowToNetTangibles
+  avgSalesGrowth
