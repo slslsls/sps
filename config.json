@@ -1,0 +1,10 @@
+{
+  "serviceLinks": {
+    "symbols": {
+      "nasdaq": "http://www.nasdaq.com/screening/companies-by-industry.aspx?exchange=NASDAQ&render=download",
+      "nyse": "http://www.nasdaq.com/screening/companies-by-industry.aspx?exchange=NYSE&render=download",
+      "amex": "http://www.asx.com.au/asx/research/ASXListedCompanies.csv",
+      "otc": "https://www.otcmarkets.com/research/stock-screener/api/downloadCSV"
+    }
+  }
+}

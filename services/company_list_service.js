@@ -1,7 +1,7 @@
-const config = require('../config');
-const rp = require('rp');
+const config = require('../config.json');
+const rp = require('request-promise');
 
-function buildSymbolsRequest(exchange) {
+function buildRequestOptions(exchange) {
 
 }
 
@@ -14,5 +14,7 @@ function getOtcSymbols() {
 }
 
 module.exports = {
-  getMainstreamSymbols
+  buildRequestOptions,
+  getMainstreamSymbols,
+  getOtcSymbols
 }
