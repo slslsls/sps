@@ -16,43 +16,41 @@ function buildRequestOptions(exchange) {
   }
 }
 
-function getMainstreamSymbols() {
+function getMainstreamApiResponses() {
   const nasdaqOpts = buildRequestOptions('nasdaq');
   const nyseOpts = buildRequestOptions('nyse');
   const amexOpts = buildRequestOptions('amex');
-  const symbols = [];
+  const apiResponses = { };
 
   rp(nasdaqOpts)
     .then(response => {
-      const nasdaqSymbols = parseResponseForSymbols('nasdaq');
-      symbols.push(nasdaqSymbols);
+      apiResponses.nasdaq = response;
       return rp(nyseOpts);
     })
     .then(response => {
-      const nyseSymbols = parseResponseForSymbols('nyse');
-      symbols.push(nyseSymbols);
+      apiResponses.nyse = response;
       return rp(amexOpts);
     })
     .then(response => {
-      const amexSymbols = parseResponseForSymbols('amex');
-      symbols.push(amexSymbols);
-    });
+      apiResponses.amex = response;
+    })
+    .catch(console.log);
 
-  return symbols;
+  return apiResponses;
 }
 
-function getOtcSymbols() {
+function getOtcApiResponse() {
   const otcOpts = buildRequestOptions('otc');
 
   rp(otcOpts)
     .then(response => {
-      const otcSymbols = parseResponseForSymbols('otc');
-      return otcSymbols;
-    });
+      return response;
+    })
+    .catch(console.log);
 }
 
 module.exports = {
   buildRequestOptions,
-  getMainstreamSymbols,
-  getOtcSymbols
+  getMainstreamApiResponses,
+  getOtcApiResponse
 };
