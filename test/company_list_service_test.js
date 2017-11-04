@@ -85,6 +85,7 @@ describe('companyListService', () => {
     _.each(exchanges, exchange => {
       it(`should return an options object with ${exchange} uri`, () => {
         const requestOptions = buildRequestOptions(exchange);
+
         expect(requestOptions.uri).to.equal(config.serviceLinks.symbols[exchange]);
       });
     });
@@ -94,6 +95,7 @@ describe('companyListService', () => {
     });
     it('should set User-Agent header to Request-Promise', () => {
       const requestOptions = buildRequestOptions('nasdaq');
+
       expect(requestOptions).to.have.property('headers');
       expect(requestOptions.headers).to.have.property('User-Agent');
       expect(requestOptions.headers['User-Agent']).to.equal('Request-Promise');

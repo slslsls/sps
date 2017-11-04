@@ -1,3 +1,5 @@
+'use strict';
+
 const _ = require('lodash');
 const { getMainstreamApiResponses, getOtcApiResponse } = require('../services/company_list_service');
 const parseResponseForSymbols = require('../utils/symbols_parser');
@@ -13,22 +15,22 @@ function buildMainstreamList() {
         ...nyseSymbols,
         ...amexSymbols
       ]);
-      console.log(list)
+
       return list;
     });
 }
 
 function buildOtcList() {
-  const apiResponse = getOtcApiResponse();
-  const otcSymbols = parseResponseForSymbols.otc(apiResponse);
-
-  return [
-    ...otcSymbols
-  ];
+  getOtcApiResponse()
+    .then(apiResponse => {
+      const otcSymbols = parseResponseForSymbols.otc(apiResponse);
+      const list = _.compact([
+        ...otcSymbols
+      ]);
+      
+      return list;
+    });
 }
-
-const mainstreams = buildMainstreamList();
-// const otcs = buildOtcList();
 
 module.exports = {
   buildMainstreamList,

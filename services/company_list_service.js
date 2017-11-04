@@ -13,7 +13,7 @@ function buildRequestOptions(exchange) {
     headers: {
       'User-Agent': 'Request-Promise'
     }
-  }
+  };
 }
 
 function getMainstreamApiResponses() {
@@ -42,7 +42,7 @@ function getMainstreamApiResponses() {
 function getOtcApiResponse() {
   const otcOpts = buildRequestOptions('otc');
 
-  rp(otcOpts)
+  return rp(otcOpts)
     .then(response => {
       return response;
     })

@@ -1,7 +1,9 @@
+'use strict';
+
 const _ = require('lodash');
 
 function trimQuotationMarks(string) {
-  if (string === '"' || string === undefined) {
+  if (string === '"' || typeof string === 'undefined') {
     return null;
   }
   if (string[0] === '"') {
@@ -19,8 +21,9 @@ function parseResponseForSymbolsNasdaq(apiResponse) {
 
   rows.shift();
   _.each(rows, row => {
-    let rowData = row.split(',')
+    let rowData = row.split(',');
     let symbol = trimQuotationMarks(rowData[0]);
+
     symbols.push(symbol);
   });
   return symbols;
@@ -32,8 +35,9 @@ function parseResponseForSymbolsNyse(apiResponse) {
 
   rows.shift();
   _.each(rows, row => {
-    let rowData = row.split(',')
+    let rowData = row.split(',');
     let symbol = trimQuotationMarks(rowData[0]);
+
     symbols.push(symbol);
   });
   return symbols;
@@ -45,8 +49,9 @@ function parseResponseForSymbolsAmex(apiResponse) {
 
   rows.shift();
   _.each(rows, row => {
-    let rowData = row.split('","')
+    let rowData = row.split('","');
     let symbol = trimQuotationMarks(rowData[1]);
+
     symbols.push(symbol);
   });
   return symbols;
@@ -58,8 +63,9 @@ function parseResponseForSymbolsOtc(apiResponse) {
 
   rows.shift();
   _.each(rows, row => {
-    let rowData = row.split(',')
+    let rowData = row.split(',');
     let symbol = trimQuotationMarks(rowData[0]);
+
     symbols.push(symbol);
   });
   return symbols;
@@ -70,4 +76,4 @@ module.exports = {
   nyse: parseResponseForSymbolsNyse,
   amex: parseResponseForSymbolsAmex,
   otc: parseResponseForSymbolsOtc
-}
+};
