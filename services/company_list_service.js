@@ -20,9 +20,9 @@ function getMainstreamApiResponses() {
   const nasdaqOpts = buildRequestOptions('nasdaq');
   const nyseOpts = buildRequestOptions('nyse');
   const amexOpts = buildRequestOptions('amex');
-  const apiResponses = { };
+  const apiResponses = {};
 
-  rp(nasdaqOpts)
+  return rp(nasdaqOpts)
     .then(response => {
       apiResponses.nasdaq = response;
       return rp(nyseOpts);
@@ -33,10 +33,10 @@ function getMainstreamApiResponses() {
     })
     .then(response => {
       apiResponses.amex = response;
+      return apiResponses;
     })
     .catch(console.log);
 
-  return apiResponses;
 }
 
 function getOtcApiResponse() {
