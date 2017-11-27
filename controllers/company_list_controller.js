@@ -27,7 +27,7 @@ function buildOtcList() {
       const list = _.compact([
         ...otcSymbols
       ]);
-      
+
       return list;
     });
 }

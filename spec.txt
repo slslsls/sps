@@ -6,7 +6,7 @@ company list controller
   pop from top of list
   pass to statement service
 
-statement service (crawler)
+statement service (crawler
   call edgar url for a company
   get desired statement
   download html
