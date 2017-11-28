@@ -4,3 +4,4 @@ PageParser
   findIncomeStatementSection(html)
   findBalanceSheetSection(html)
   findCashFlowStatementSection(html)
+  findSharesOutstanding

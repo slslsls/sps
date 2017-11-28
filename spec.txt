@@ -6,20 +6,20 @@ company list controller
   pop from top of list
   pass to statement service
 
-statement service (crawler
+statement service (crawler)
   call edgar url for a company
-  get desired statement
+  get desired statements
   download html
   pass to page parser
 
 pricing service
   get latest share price
-  get latest market cap
 
 page parser
   find income statement section
   find balance sheet section
   find cash flow statement section
+  find shares outstanding
   pass to the proper controller
 
 income statement
